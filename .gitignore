@@ -1,0 +1,23 @@
+#Feito pelo GPT
+
+# Arquivos gerados pelo Maven
+target/
+
+# Arquivos compilados do Java
+*.class
+
+# Configurações locais de IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Arquivos temporários
+*.tmp
+*.bak
+
+# Configurações locais e segredos
+.env
+.env.*
+!.env.example
