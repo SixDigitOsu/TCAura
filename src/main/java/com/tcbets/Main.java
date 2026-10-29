@@ -11,7 +11,7 @@ vai ser um monte de pasta:
 Modelo: pra classes
 banco: pro sql
 dao: pro CRUD
-servico: pra fazer melhor os bagulho
+servico: tipo uma classe auxiliar
 rede: pro servidor
 e a classe Main vai ficar no source, fora de todas
 */
