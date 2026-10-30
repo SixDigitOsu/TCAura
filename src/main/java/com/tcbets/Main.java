@@ -1,10 +1,12 @@
 package com.tcbets;
 
+import java.util.Scanner;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.*;
 import java.net.http.*;
 import java.net.URI;
+import com.tcbets.servico.PokemonService;
 
 /*
 vai ser um monte de pasta:
@@ -18,6 +20,8 @@ e a classe Main vai ficar no source, fora de todas
 
 /*TESTE DO JACKSON COM POKEAPI!!!!!! */
 public class Main {
+
+    final static Scanner ler =  new Scanner(System.in);
 
     public static void testeHTTP1() throws Exception{
 
@@ -33,6 +37,8 @@ public class Main {
 
         System.out.println("Código HTTP:" + resposta.statusCode()); // fala se deu merda ou não, se for 200 da bom
         System.out.println(resposta.body()); // imprime um puta json
+
+    
 
     }
 
@@ -56,9 +62,25 @@ public class Main {
 
     }
 
+    public static void pesquisa() throws Exception{
+    String[] pokemons = PokemonService.carregarPokemons();
+
+    Scanner ler = new Scanner(System.in);
+
+    System.out.print("Pesquisar Pokemon: ");
+    String pesquisa = ler.nextLine();
+
+    String[] encontrados =
+        PokemonService.pesquisarPokemon(pesquisa, pokemons);
+
+    for (String pokemon : encontrados) {
+        System.out.println(pokemon);
+    }
+    }
+
     public static void main(String[] args) throws Exception /*fodase exceção*/{
 
-        testeHTTP2();
+    pesquisa();
         
     }
 }
