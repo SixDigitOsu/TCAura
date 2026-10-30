@@ -3,6 +3,15 @@ package com.tcbets;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.*;
+import com.sun.glass.ui.Menu;
+
+import javafx.*;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.*;
+import javafx.application.*;
+
 import java.net.http.*;
 import java.net.URI;
 
@@ -17,7 +26,7 @@ e a classe Main vai ficar no source, fora de todas
 */
 
 /*TESTE DO JACKSON COM POKEAPI!!!!!! */
-public class Main {
+public class App extends Application{
 
     public static void testeHTTP1() throws Exception{
 
@@ -56,9 +65,25 @@ public class Main {
 
     }
 
-    public static void main(String[] args) throws Exception /*fodase exceção*/{
+    @Override 
+    public void start(Stage stage) {
 
-        testeHTTP2();
+        Label testo = new Label("TCBets");
+
+        VBox layout = new VBox();
+
+        layout.getChildren().add(testo);
+
+        Scene cena = new Scene(layout, 800, 600);
+
+        stage.setTitle("Pomekon");
+        stage.setScene(cena);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+
+        launch(args);
         
     }
 }
