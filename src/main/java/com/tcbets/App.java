@@ -3,7 +3,6 @@ package com.tcbets;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.*;
-import com.sun.glass.ui.Menu;
 
 import javafx.*;
 import javafx.scene.Scene;
